@@ -51,7 +51,7 @@ export default defineConfig({
 					],
 				},
 			],
-			customCss: ['./src/styles/global.css'],
+			customCss: ['./src/fonts/font-face.css', './src/styles/global.css'],
 			head: [
 				{
 					tag: 'meta',
