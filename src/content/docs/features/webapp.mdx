@@ -1,0 +1,43 @@
+---
+title: Webapp
+description: Record higher quality audio through the browser, bypassing Discord's audio processing.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import webappOnboard from '../../../assets/webapp_onboard.png';
+import webapp from '../../../assets/webapp.png';
+
+The Craig Webapp allows participants to record directly through their browser, providing higher quality audio that bypasses Discord's voice server and audio processing.
+
+<Image src={webappOnboard} alt="Webapp onboarding" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
+
+<Image src={webapp} alt="Webapp" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
+
+The webapp provides a recording monitor which displays live who's connected and who's speaking, whether through Discord or the Webapp. If you're ever concerned whether your audio is actually making it to Craig, this makes it crystal clear!
+
+## Setup
+
+<Steps>
+1. Enable the Webapp for your server: `/webapp on`
+
+2. Start a recording with `/join`
+
+3. Share the Webapp link (from the direct message with your download link) with participants
+
+4. Participants open the link in Firefox or Chrome browser
+
+5. Webapp users appears as additional tracks in the same recording, along side regular Discord users
+</Steps>
+
+Audio captured through the webapp doesn't go through Discord, which means that it won't be processed, and won't suffer ill effect from bad Internet connections. You will get a cleaner, more complete recording of any user who opts to use it.
+
+## Technical Details
+
+When used with Craig, the Webapp isn't an independent application: Web tracks are included in the same recording as Discord tracks, and are downloaded through the same system. It should have negligible effect on the editing process, other than providing higher-quality audio for editing.
+
+The Webapp uses Opus-compressed audio, like Discord itself, but at 128kbit, which in Opus is sufficient for almost any purpose. The audio is compressed in the browser itself, so a modern browser is required! [Tier 3 Supporters](https://craig.chat/supporter) may opt to record directly in FLAC, eliminating lossy compression from the entire recording pipeline.
+
+The Webapp employs a voice activity detector (VAD), which means it's only transmitting audio when the speaker is talking. However, unlike a traditional VAD, the Craig Webapp's VAD buffers two seconds of surrounding audio, so that there are no sudden cut-ins or cut-outs. [Tier 2 Supporters](https://craig.chat/supporter) may disable the VAD, and thus get continuous recordings of all users.
+
+The Craig Webapp has the same commitment to synchronization as the rest of Craig. Web clients constantly check for synchronization with the server and account for clock drift, so that multiple tracks never go out of sync.

@@ -1,0 +1,64 @@
+---
+title: Cloud Upload
+description: Automatically upload your recordings to Google Drive, OneDrive, or Dropbox.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import uploadService from '../../../assets/upload_service.png';
+
+Cloud Backup is a premium feature that automatically uploads your finished recordings to your preferred cloud storage service.
+
+<Aside type="note">
+Cloud Backup requires being a [supporter](https://craig.chat/supporter). Any supporter tier can link cloud storage.
+</Aside>
+
+## Supported Services
+
+- Google Drive
+- Microsoft OneDrive
+  - Files will be under "Apps/Craig"
+- Dropbox
+  - Files will be under "Apps/CraigChat"
+- Box
+
+## Setup
+
+<Steps>
+1. Make sure you have an active [supporter subscription](https://craig.chat/supporter).
+
+2. Log in to the [Craig Dashboard](https://my.craig.chat/).
+
+3. Connect your cloud storage account (Google, Microsoft, Dropbox, or Box).
+
+4. That's it! Your recordings will now automatically upload when they finish.
+</Steps>
+
+<Image src={uploadService} alt="Upload service selection" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
+
+
+## How It Works
+
+When your recording ends, Craig will start processing your recording in the selected format and DM you once the upload has finished with a link to the file.
+
+The filename will include the recording ID and date for easy organization.
+
+## Frequently Asked Questions
+
+### Where do my recordings go?
+
+Your recordings are automatically placed in a folder named **"Craig"** in your cloud storage (unless specified above). You don't need to create this folder, Craig will create it automatically.
+
+### Which account receives the upload?
+
+The recording is uploaded to the account of the **person who started the recording**. If it was an auto-recording, it uploads to the account of the person who enabled auto-recording for that channel.
+
+### Can I share benefits with my server?
+
+<Aside type="caution">
+Recordings will **not** be uploaded if the person who started the recording doesn't have cloud backup linked, regardless of server blessings. Make sure the person starting recordings has access to Cloud Backup.
+</Aside>
+
+### How long until my recording is uploaded?
+
+Upload time depends on the length of your recording. You'll receive a DM notification when the upload is complete or if it has failed.

@@ -4,14 +4,205 @@
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/utilities.css' layer(utilities);
 
-@theme {
-	/*
-	Configure your Tailwind theme that will be used by Starlight.
-	https://starlight.astro.build/guides/css-and-tailwind/#styling-starlight-with-tailwind
-	*/
+/* Public Sans font */
+@font-face {
+	font-family: 'Public Sans Variable';
+	src: url('/fonts/PublicSans-variable.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
 }
 
-/*
-Add additional Tailwind styles to this file:
-https://tailwindcss.com/docs/adding-custom-styles#using-custom-css
-*/
+@font-face {
+	font-family: 'Public Sans Variable';
+	src: url('/fonts/PublicSans-variable-italic.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@theme {
+	/* Font families */
+	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	--font-display: 'Public Sans Variable', 'Inter Variable', var(--font-sans);
+  --font-display--font-feature-settings: 'salt' on, 'liga' off;
+
+	/* Custom colors */
+	--color-discord: #5865F2;
+	--color-brand: #00AAAA;
+}
+
+/* Starlight dark mode theme overrides - matching new.craig.chat */
+:root {
+	/* Background colors - slate-950 for content, slightly lighter for nav/sidebar */
+	--sl-color-bg: #020617;
+	--sl-color-bg-nav: #0f172a;
+	--sl-color-bg-sidebar: #0f172a;
+	--sl-color-bg-inline-code: rgba(100, 116, 139, 0.25);
+
+	/* Accent colors - teal */
+	--sl-color-accent-low: #0d3d38;
+	--sl-color-accent: #14b8a6;
+	--sl-color-accent-high: #5eead4;
+
+	/* Text colors */
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #e2e8f0;
+	--sl-color-gray-2: #cbd5e1;
+	--sl-color-gray-3: #94a3b8;
+	--sl-color-gray-4: #64748b;
+	--sl-color-gray-5: #475569;
+	--sl-color-gray-6: #334155;
+	--sl-color-black: #020617;
+
+	/* Border colors */
+	--sl-color-hairline-shade: rgba(100, 116, 139, 0.5);
+	--sl-color-hairline-light: rgba(100, 116, 139, 0.25);
+
+	/* Fonts */
+	--sl-font: var(--font-sans);
+	--sl-font-system-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Force dark mode */
+:root[data-theme='light'] {
+	--sl-color-bg: var(--color-slate-950);
+	--sl-color-bg-nav: var(--color-slate-900);
+	--sl-color-bg-sidebar: var(--color-slate-900);
+	--sl-color-bg-inline-code: rgba(100, 116, 139, 0.25);
+	--sl-color-accent-low: #0d3d38;
+	--sl-color-accent: #14b8a6;
+	--sl-color-accent-high: #5eead4;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #e2e8f0;
+	--sl-color-gray-2: #cbd5e1;
+	--sl-color-gray-3: #94a3b8;
+	--sl-color-gray-4: #64748b;
+	--sl-color-gray-5: #475569;
+	--sl-color-gray-6: #334155;
+	--sl-color-black: #020617;
+	--sl-color-hairline-shade: rgba(100, 116, 139, 0.5);
+	--sl-color-hairline-light: rgba(100, 116, 139, 0.25);
+}
+
+/* Header styling */
+header.header {
+	@apply bg-slate-900;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-title img {
+	@apply rounded-md;
+}
+
+.site-title span {
+	@apply font-display text-white;
+}
+
+.site-title {
+	@apply gap-4;
+}
+
+/* Sidebar styling */
+.sidebar-content {
+	border-right: 1px solid rgba(100, 116, 139, 0.25);
+}
+
+/* Card styling to match new.craig.chat */
+.sl-link-card {
+	background: rgba(100, 116, 139, 0.25);
+	border: 1px solid rgba(100, 116, 139, 0.75);
+	border-radius: 0.75rem;
+	transition: all 0.2s ease;
+}
+
+.sl-link-card:hover {
+	background: rgba(100, 116, 139, 0.3);
+	border-color: rgb(100, 116, 139);
+}
+
+/* Code blocks */
+.expressive-code pre {
+	background: #1e293b !important;
+	border: 1px solid rgba(100, 116, 139, 0.5);
+	border-radius: 0.5rem;
+}
+
+/* Links */
+.sl-markdown-content a:not([class]) {
+	color: #2dd4bf;
+}
+
+.sl-markdown-content a:not([class]):hover {
+	text-decoration: underline;
+}
+
+/* Headings with display font */
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-display);
+	font-feature-settings: 'salt' on, 'liga' off;
+}
+
+/* Aside/callout boxes */
+.starlight-aside {
+	background: rgba(100, 116, 139, 0.15);
+	border-color: rgba(100, 116, 139, 0.5);
+	border-radius: 0.5rem;
+}
+
+.starlight-aside--tip {
+	border-color: var(--color-teal-400);
+	background: rgba(0, 170, 170, 0.1);
+}
+
+.starlight-aside--tip .starlight-aside__title {
+	color: var(--color-teal-400);
+}
+
+.starlight-aside--caution {
+	border-color: #f59e0b;
+	background: rgba(245, 158, 11, 0.1);
+}
+
+.starlight-aside--danger {
+	border-color: #ef4444;
+	background: rgba(239, 68, 68, 0.1);
+}
+
+/* Hide theme toggle - dark mode only */
+starlight-theme-select {
+	display: none !important;
+}
+.social-icons::after {
+	display: none;
+}
+
+/* Custom button styles */
+.craig-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	font-weight: 500;
+	transition: all 0.2s ease;
+}
+
+.craig-btn-discord {
+	background: var(--color-discord);
+	color: white;
+}
+
+.craig-btn-discord:hover {
+	background: rgba(88, 101, 242, 0.9);
+}
+
+.craig-btn-teal {
+	background: rgba(20, 184, 166, 0.25);
+	color: #99f6e4;
+}
+
+.craig-btn-teal:hover {
+	background: rgba(20, 184, 166, 0.5);
+	color: #f0fdfa;
+}

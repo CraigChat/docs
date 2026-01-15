@@ -1,0 +1,25 @@
+---
+title: Transcription
+description: Transcribe your recordings on Craig, with multiple formats supported.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import transcriptionSection from '../../../assets/transcription_section.png';
+import transcriptionModal from '../../../assets/transcription_modal.png';
+
+Transcription is a premium feature that transcribes your recordings using [Faster Whisper](https://github.com/SYSTRAN/faster-whisper). We use [Runpod](https://runpod.io/?ref=4ery0ian) to handle our transcription processing.
+
+<Aside type="note">
+Transcription requires being a **Tier 3 Supporter**. [Become a supporter](https://craig.chat/supporter) to unlock this feature.
+</Aside>
+
+If you are a Tier 3 Supporter, you can go into any non-expired recording and check the download page for a new Transcription section.
+
+<Image src={transcriptionSection} alt="Transcription section" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
+
+You can have your transcription in WebVTT, SubRip text (SRT), or in plain text. WebVTT also includes per-word timestamps, which works well for captioning.
+
+<Image src={transcriptionModal} alt="Transcription modal" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
+
+For recordings with interjecting speech, Craig will try to separate speech into useable caption-like sentences.

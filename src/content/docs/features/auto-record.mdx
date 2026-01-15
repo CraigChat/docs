@@ -1,0 +1,55 @@
+---
+title: Auto-record
+description: Automatically start recording when users join a voice channel.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Auto-recording is a premium feature that allows Craig to automatically start a recording when users join a voice channel. This is perfect for regular podcasts, streams, or any recurring voice sessions.
+
+<Aside type="note">
+Auto-recording requires being a **Tier 2 Supporter**. [Become a supporter](https://craig.chat/supporter) to unlock this feature.
+</Aside>
+
+## Setup
+
+<Steps>
+1. Make sure you have an active [Tier 2 Supporter subscription](https://craig.chat/supporter) or higher.
+
+2. Link your Discord account, or visit the [dashboard](https://my.craig.chat/) to link it there.
+
+3. Enable auto-recording with the command: `/autorecord on`
+
+4. Configure your auto-recording settings (optional):
+   - **Minimum users** - How many users must be in the channel before recording starts
+   - **Trigger users/roles** - Specific users and/or roles who can trigger the auto-recording
+   - **Post channel** - Where to post the recording panel
+</Steps>
+
+You can check your current auto-recording settings with `/autorecord view`. Settings are displayed per bot and can be different between instances.
+
+## Troubleshooting
+
+### Craig didn't auto-record!
+
+Make sure Craig has permission to connect the the channel you are auto-recording in. Also make sure Craig can change it's nickname, as this will also prevent Craig from recording. Also check if your supporter status has changed or expired.
+
+### Recording panel didn't appear
+
+If you set a post channel:
+- Make sure Craig can **send messages** in that channel
+- Make sure Craig can **embed links** in that channel
+
+You can re-create the recording panel with `/join`.
+
+### Craig is taking a long time to start...
+
+Craig will check to auto-record when there is no activity (users joining/leaving the channel) in the voice channel for 2 seconds. If a lot of people are joining or leaving the channel too quickly, this will delay the check.
+
+### Recording starts when I don't want it to
+
+By default, auto-recording triggers with just 1 user. Set a higher minimum user count if you want to require more people before recording starts.
+
+<Aside type="note">
+Trigger users and roles **override** the minimum user count. If you have triggers set, they will start a recording even if the minimum user count isn't met.
+</Aside>
