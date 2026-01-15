@@ -29,8 +29,8 @@ export default defineConfig({
 			],
 			sidebar: [
 				{ label: 'Home', slug: 'index' },
-				{ label: 'Commands', link: 'https://craig.chat/commands' },
-				{ label: 'FAQ', link: 'https://craig.chat/faq' },
+				{ label: 'Commands', link: 'https://craig.chat/commands', attrs: { target: '_blank' } },
+				{ label: 'FAQ', link: 'https://craig.chat/faq', attrs: { target: '_blank' } },
 				{
 					label: 'Features',
 					items: [
