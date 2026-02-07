@@ -41,6 +41,13 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Misc',
+					items: [
+						{ label: 'Giarc', slug: 'giarc' },
+						{ label: 'Yahweasel\'s Audio Primer', link: 'https://craig.chat/primer', attrs: { target: '_blank' } },
+					],
+				},
+				{
 					label: 'Links',
 					items: [
 						{ label: 'Add Craig', link: 'https://craig.chat/invite', attrs: { target: '_blank' } },

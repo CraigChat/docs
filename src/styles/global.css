@@ -24,7 +24,7 @@
 	--sl-color-bg-inline-code: rgba(100, 116, 139, 0.25);
 
 	/* Accent colors - teal */
-	--sl-color-accent-low: var(--color-teal-600);
+	--sl-color-accent-low: var(--color-teal-900);
 	--sl-color-accent: var(--color-teal-500);
 	--sl-color-accent-high: var(--color-teal-300);
 
