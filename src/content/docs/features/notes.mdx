@@ -1,0 +1,31 @@
+---
+title: Notes
+description: Add notes to your Craig recordings, where they will show up in various places!
+---
+import { Image } from 'astro:assets';
+import notes from '../../../assets/notes.png';
+import notesModal from '../../../assets/notes_modal.png';
+import notesAudacity from '../../../assets/notes_audacity.png';
+import notesAdobe from '../../../assets/notes_adobe.png';
+import notesTxt from '../../../assets/notes_txt.png';
+
+With Craig, you can add notes during a recording, where it will be timestamped and show up in some exports. You can use this to note down things that happen, or create chapters or segments during a recording.
+
+<Image src={notes} alt="Note button in Craig recording panel" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
+
+To create a note, there is an "Add a note" button that will create a text box to put your note in. You can also use the `/note` command during a recording.
+
+<Image src={notesModal} alt="Notes modal" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
+
+In every multi-track format, notes will show up inside the "info.txt" text file.
+
+<Image src={notesTxt} alt="Craig Notes in the info.txt" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
+
+In Audacity projects, notes will be shown in a label track.
+
+<Image src={notesAudacity} alt="Marker track in Audacity showing Craig Notes" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
+
+
+In Adobe Audition sessions, notes will be shown as markers.
+
+<Image src={notesAdobe} alt="Adobe Audition Markers showing notes" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
