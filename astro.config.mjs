@@ -18,7 +18,7 @@ export default defineConfig({
 			title: 'Craig Docs',
 			description: 'Craig is the multi-track recording bot for Discord.',
 			logo: {
-				src: './src/assets/craig.svg',
+				src: './src/assets/favicon.png',
 				replacesTitle: false,
 			},
 			favicon: '/favicon.ico',
