@@ -34,11 +34,12 @@ export default defineConfig({
 				{
 					label: 'Features',
 					items: [
-						{ label: 'Transcription', slug: 'features/transcription' },
+						{ label: 'Access Roles', slug: 'features/access-roles' },
+						{ label: 'Notes', slug: 'features/notes' },
 						{ label: 'Cloud Upload', slug: 'features/cloud-upload' },
+						{ label: 'Transcription', slug: 'features/transcription' },
 						{ label: 'Auto-record', slug: 'features/auto-record' },
 						{ label: 'Webapp', slug: 'features/webapp' },
-						{ label: 'Notes', slug: 'features/notes' },
 					],
 				},
 				{

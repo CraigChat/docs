@@ -1,0 +1,19 @@
+---
+title: Access Roles
+description: Manage who is allowed to start recordings with access roles.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import accessRoleAdd from '../../../assets/access_role_add.png';
+import serverSettingsView from '../../../assets/server_settings_view.png';
+
+In order to allow other people to record in your server, create a role that will act as an **access role** which allows anyone with that role to use Craig to record.
+
+You can use the `/server-settings access-role` command to add and remove access roles.
+
+<Image src={accessRoleAdd} alt="Usage of the `/server-settings access-role add` command" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
+
+You can view the access roles with `/server-settings view`.
+
+<Image src={serverSettingsView} alt="Usage of the `/server-settings view` command" style="border-radius: 0.75rem; margin-bottom: 1.5rem;" />
